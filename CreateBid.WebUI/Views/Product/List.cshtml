@@ -1,0 +1,62 @@
+﻿
+
+@model List<ProductModel>
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="container">
+    <h3 style="text-align:center;">Offers</h3>
+    <table class="table table-hover table-bordered table-sm my-3 mx-2">
+        <thead>
+            <tr>
+                <th style="text-align:center">Name</th>
+                <th style="text-align:center">Price</th>
+                <th style="text-align:center">Description</th>
+                <th style="text-align:center">Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.Description</td>
+                    <td style="text-align:center">
+                        @if (product.OnSale == true)
+                        {
+                            <i class="badge badge-success">On Sale</i>
+                        }
+                        else
+                        {
+                            <i class="badge badge-danger">Not On Sale</i>
+                        }
+                        
+
+                    </td>
+                    <td>
+                        <a href="/product/edit/@product.Id" class="btn btn-warning btn-sm">
+                            <i class="far fa-edit"></i> Edit
+                        </a>
+                        <a href="/product/delete/@product.Id" class="btn btn-danger btn-sm">
+                            <i class="far fa-edit"></i> Delete
+                        </a>
+                    </td>           
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts{
+    <script src="https://kit.fontawesome.com/121552d072.js"
+            crossorigin="anonymous"></script>
+}
+
+
+
+

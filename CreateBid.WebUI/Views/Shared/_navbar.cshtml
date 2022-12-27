@@ -1,0 +1,26 @@
+﻿<div class="navbar bg-danger navbar-dark navbar-expand-sm">
+    <div class="container">
+        <a href="/" class="navbar-brand">Create a Bid</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="/offer/list" class="nav-link">Offers</a>
+            </li>
+            <li class="nav-item">
+                <a href="/customer/list" class="nav-link">Customers</a>
+            </li>
+            <li class="nav-item">
+                <a href="/product/list" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+                <a asp-controller="offer" asp-action="create" class="nav-link">Add Offer</a>
+            </li>
+            <li class="nav-item">
+                <a asp-controller="customer" asp-action="create" class="nav-link">Add Customer</a>
+            </li>
+            <li class="nav-item">
+                <a asp-controller="product" asp-action="create" class="nav-link">Add Product</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
